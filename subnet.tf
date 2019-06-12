@@ -21,7 +21,8 @@
 # }
 
 resource "aws_subnet" "subnet_for_app_a" {
-    vpc_id = "${aws_vpc.default.id}"
+    # vpc_id = "${aws_vpc.default.id}"
+    vpc_id = "${module.vpc.vpc_id}"
     cidr_block = "172.31.8.0/22"
     availability_zone = "ap-southeast-1a"
     map_public_ip_on_launch = true
@@ -31,7 +32,8 @@ resource "aws_subnet" "subnet_for_app_a" {
 }
 
 resource "aws_subnet" "subnet_for_app_b" {
-    vpc_id = "${aws_vpc.default.id}"
+    # vpc_id = "${aws_vpc.default.id}"
+    vpc_id = "${module.vpc.vpc_id}"
     cidr_block = "172.31.12.0/22"
     availability_zone = "ap-southeast-1b"
     map_public_ip_on_launch = true
