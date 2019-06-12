@@ -15,8 +15,8 @@ terraform {
 resource "aws_instance" "web" {
   ami           = "${data.aws_ami.ubuntu.id}"
   instance_type = "t2.micro"
-  subnet_id     = "${aws_vpc.default.id}"
-
+  subnet_id     = "${aws_subnet.subnet_for_app_a.id}"
+  
   tags = {
     Name = "Ian Test"
   }
